@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Adamina" />
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('js', path='/js/jquery.min.js') }}"></script>
+    <title>Config controller</title>
+</head>
+
+<body>
+    <div id="first">
+        <div id="tittle">
+            <h1>Configuration Controller Charge</h1>
+        </div>
+        <div id="tittle">
+            <h2>{{req}}</h2>
+        </div>
+        <div id="tittle">
+            <h3>Schedule</h3>
+        </div>
+        <div class="alert" style="display:none" id="alert">
+            <span class="closebtn" onclick="location.href='/'">&rArr;</span>
+            <strong>Done</strong> Save all configuration.
+        </div>
+        <div>
+            <button onclick="location.href='/conftime';" class="button">Configuration times</button>
+        </div>
+        <form class="form-horizontal" action="/tou" method="post" id="my-form"
+            onsubmit="document.getElementById('alert').style.display='';return false">
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Time of use </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="timeOfUse" id="timeOfUse" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Monday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="monday" id="monday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Tuesday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="tuesday" id="tuesday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Wednesday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="wednesday" id="wednesday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Thursday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="thursday" id="thursday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Friday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="friday" id="friday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Saturday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="saturday" id="saturday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Sunday </label>
+                </div>
+                <div class="col">
+                    <input class="checkbox" type="checkbox" name="sunday" id="sunday" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 1 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode1" class="form-select" name="mode1">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 2 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode2" class="form-select" name="mode2">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 3 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode3" class="form-select" name="mode3">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 4 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode4" class="form-select" name="mode4">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 5 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode5" class="form-select" name="mode5">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Mode 6 </label>
+                </div>
+                <div class="col">
+                    <select id="formMode6" class="form-select" name="mode6">
+                        <option value="0">No charge</option>
+                        <option value="1">Grid charge</option>
+                        <option value="2">Generator charge</option>
+                        <option value="3">Grid or gencharging</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="submitfin">
+                <input type="submit" value="Save configuration" />
+            </div>
+        </form>
+        <br>
+        <div style="justify-content: center;">
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Name setting </label>
+                </div>
+                <div class="col">
+                    <input type="text" id="textSetting" size="15" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="control-label row-sm-2">Description setting </label>
+                </div>
+                <div class="col">
+                    <textarea style="resize: none" type="text" id="textDescription" cols="18" rows="3"></textarea>
+                </div>
+            </div>
+            <div style="justify-content: center;">
+                <button id="button" onclick="settings();">Save
+                    setup</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="location.href='/';" class="button button3">Go to home</button>
+        </div>
+    </div>
+    <script src="{{ url_for('js', path='/js/tou.js') }}"></script>
+</body>
+
+</html>

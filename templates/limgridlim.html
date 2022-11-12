@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="{{ url_for('static', path='\css\styles.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Adamina" />
+  <title>Config controller</title>
+</head>
+
+<body>
+  <div id="first">
+    <div id="tittle">
+      <h1>Configuration Controller Charge</h1>
+    </div>
+    <div id="tittle">
+      <h2>{{req}}</h2>
+    </div>
+    <div id="buttons">
+      <div>
+        <button onclick="location.href='/confall/1';" class="button button1">Limited power to load</button>
+        <p>This is space is unique for the application function.</p>
+      </div>
+      <div>
+        <button onclick="location.href='/confall/0';" class="button button2">Grid selling</button>
+        <p>This is space is unique for the application function.</p>
+      </div>
+      <div>
+        <button onclick="location.href='/confall/2';" class="button button3">Limited to home</button>
+        <p>This is space is unique for the application function.</p>
+      </div>
+    </div>
+    <button onclick="location.href='/';" class="button button3">Go to home</button>
+  </div>
+</body>
+
+</html>

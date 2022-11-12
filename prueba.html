@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="myP1">This is some text.</p>
+    <p id="myP2">This is some text.</p>
+    <label for="dog-names">Choose a dog name:</label>
+    <select name="dog-names" id="dog-names" onchange="cambio();">
+        <option value="rigatoni">Rigatoni</option>
+        <option value="dave">Dave</option>
+        <option value="pumpernickel">Pumpernickel</option>
+        <option value="reeses">Reeses</option>
+    </select>
+    <input type="button" onclick="demoDisplay()" value="Hide text with display property">
+    <input type="button" onclick="demoVisibility()" value="Hide text with visibility property">
+
+    <script>
+        function cambio() {
+            var e = document.getElementById("dog-names");
+            var value = e.value;
+            var text = e.options[e.selectedIndex].text;
+            console.log(text)
+            if (text == "Rigatoni") {
+                document.getElementById("myP1").style.display = "none";
+            }
+            else {
+                document.getElementById("myP1").style.display = "inline";
+            }
+        }
+        function demoDisplay() {
+            document.getElementById("myP1").style.display = "none";
+        }
+
+        function demoVisibility() {
+            document.getElementById("myP2").style.visibility = "hidden";
+        }
+    </script>
+
+</body>
+
+</html>

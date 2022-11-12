@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Adamina" />
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('js', path='/js/jquery.min.js') }}"></script>
+    <title>Config controller</title>
+</head>
+
+<body>
+    <div id="first">
+        <div id="tittle">
+            <h1>Configuration Controller Charge</h1>
+        </div>
+        <div id="tittle">
+            <h2>{{req}}</h2>
+        </div>
+        <br>
+        <div class="alert" style="display:none" id="alert">
+            <span class="closebtn" onclick="location.href='/tou'">&rArr;</span>
+            <strong>Done</strong> Save configuration.
+        </div>
+        <form class="form-horizontal" action="/confall" method="post" id="my-form"
+            onsubmit="document.getElementById('alert').style.display='';return false">
+            {% if req == "With panel pv" %}
+            <div class="row row1">
+                <div class="col">
+                    <label class="control-label row-sm-2">Solar sell </label>
+                </div>
+                <div class="col">
+                    <input id="solarSellCheck" class="checkbox" type="checkbox" name="solarSell" />
+                </div>
+            </div>
+            {% endif %}
+            <div class="row row1">
+                <div class="col">
+                    <label class="control-label row-sm-2">Energy pattern </label>
+                </div>
+                <div class="col">
+                    <select class="form-select" name="pattern" id="selectPattern">
+                        <option value="1">Battery first</option>
+                        <option value="0">Load first</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row1">
+                <div class="col">
+                    <label class="control-label row-sm-2">Max sell power </label>
+                </div>
+
+                <div class="col">
+                    <input class="form-control" type="number" min="0" max="8000" name="maxSellPower"
+                        id="maxSellPower" />
+                </div>
+            </div>
+            {% if req == "With panel pv" %}
+            <div class="row row1">
+                <div class="col">
+                    <label class="control-label row-sm-2">Max solar power </label>
+                </div>
+
+                <div class="col">
+                    <input class="form-control" type="number" min="0" max="8000" name="maxSolarPower"
+                        id="maxSolarPower" />
+                </div>
+            </div>
+            {% endif %}
+            <br>
+            <div id="submitfin">
+                <input type="submit" value="Save configuration" />
+            </div>
+        </form>
+        <button onclick="location.href='/';" class="button button3">Go to home</button>
+    </div>
+    <script src="{{ url_for('js', path='/js/confall.js') }}"></script>
+</body>
+
+</html>

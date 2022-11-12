@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Adamina" />
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('js', path='/js/jquery.min.js') }}"></script>
+    <title>Config controller</title>
+</head>
+
+<body>
+    <div id="first">
+        <div id="tittle">
+            <h1>Configuration Controller Charge</h1>
+        </div>
+        <div id="tittle">
+            <h2>Configuration times</h2>
+        </div>
+        <br>
+        <div class="alert" style="display:none" id="alert">
+            <span class="closebtn" onclick="location.href='/tou'">&rArr;</span>
+            <strong>Done</strong> Save configuration.
+        </div>
+        <div id="tittle">
+            <select class="form-select" id="times" onchange="cambio();">
+                <option value="time1">Time 1</option>
+                <option value="time2">Time 2</option>
+                <option value="time3">Time 3</option>
+                <option value="time4">Time 4</option>
+                <option value="time5">Time 5</option>
+                <option value="time6">Time 6</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <form class="form-horizontal" action="/conftime1" method="post" id="my-form"
+                onsubmit="document.getElementById('alert').style.display='';return false">
+                <div id="form1">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour1" id="hour1" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power1" id="power1" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc1" id="soc1" />
+                        </div>
+                    </div>
+                </div>
+                <div id="form2">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour2" id="hour2" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power2" id="power2" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc2" id="soc2" />
+                        </div>
+                    </div>
+                </div>
+                <div id="form3">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour3" id="hour3" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power3" id="power3" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc3" id="soc3" />
+                        </div>
+                    </div>
+                </div>
+                <div id="form4">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour4" id="hour4" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power4" id="power4" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc4" id="soc4" />
+                        </div>
+                    </div>
+                </div>
+                <div id="form5">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour5" id="hour5" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power5" id="power5" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc5" id="soc5" />
+                        </div>
+                    </div>
+                </div>
+                <div id="form6">
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Hour </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="time" name="hour6" id="hour6" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">Power </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="8000" name="power6" id="power6" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label row-sm-2">SOC % </label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" min="0" max="100" name="soc6" id="soc6" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div id="submitfin">
+                    <input type="submit" value="Save configuration" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <button onclick="location.href='/tou';" class="button button3">Go to schedule</button>
+        </div>
+        <div>
+            <button onclick="location.href='/';" class="button button3">Go to home</button>
+        </div>
+    </div>
+    <script src="{{ url_for('js', path='/js/change.js') }}"></script>
+    <script src="{{ url_for('js', path='/js/conftime.js') }}"></script>
+</body>
+
+</html>
